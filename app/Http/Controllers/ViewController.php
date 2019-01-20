@@ -9,4 +9,30 @@ class ViewController extends Controller
     function homeView() {
         return view('home');
     }
+
+    function loginView() {
+        return view('login');
+    }
+
+    function registerView() {
+        return view('register');
+    }
+
+    function studentlistView() {
+        return view('studentlist');
+    }
+
+    function studentupdateView() {
+        return view('studentupdate');
+    }
+
+    function eventlistView() {
+        return view('eventlist');
+    }
+
+
+    function eventdetailsView() {
+
+        return view('eventdetails');
+    }
 }

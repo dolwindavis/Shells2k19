@@ -9,6 +9,6 @@
     <script src="main.js"></script>
 </head>
 <body>
-    events
+   home
 </body>
 </html>

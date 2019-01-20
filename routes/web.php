@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,32 +16,34 @@
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/home', function () {
-    return view('home');
-});
 
-//Route::get('/home','ViewController@homeview');
+//Controller => ViewController
+//Rendering Views
+Route::get('/home','ViewController@homeview');
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', 'ViewController@loginView');
 
-Route::get('/register', function () {
-    return view('register');
-});
+Route::get('/register','ViewController@registerView');
 
-Route::get('/student', function () {
-    return view('studentlist');
-});
+Route::get('/student','ViewController@studentlistView');
 
-Route::get('/student/update', function () {
-    return view('studentupdate');
-});
-Route::get('/events/list', function () {
-    return view('eventlist');
-});
-Route::get('/events/details', function () {
-    return view('eventdetails');
-});
+Route::get('/student/update','ViewController@studentupdateView');
 
+Route::get('/events/list', 'ViewController@eventlistView');
+
+Route::get('/events/details','ViewController@eventdetailsView');
+
+//Controller => RegisterController
+//Registering a colleger
+
+Route::post('/register','RegisterController@registerCollege'); 
+
+Route::post('/student/register','RegisterController@registerStudent');
+
+
+//Authentication controllers
+//Controller => LoginController
+//login =>for login
+//logout => for logout
+Auth::routes(['register' => false]);
 
