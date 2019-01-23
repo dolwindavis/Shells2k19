@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CollegeRegisterRequest extends FormRequest
+class StudentRegisterRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,18 +23,18 @@ class CollegeRegisterRequest extends FormRequest
      */
     public function rules()
     {
+        
         return [
-
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'phone' => 'required|digits:10|',
-            'password' => 'required|string|gte:8',
-            //'confirm' => 'required|same:password',
-            'stay' => 'required',
-            'faculty' => 'required'
+            'reg_no' => 'required',
+            'course' => 'required',
+            'gender' => 'required'
 
         ];
     }
+
 
     /**
      * Custom message for validation
@@ -46,8 +46,9 @@ class CollegeRegisterRequest extends FormRequest
         return [
             'email.required' => 'Email is required!',
             'name.required' => 'Name is required!',
-            'password.required' => 'Password is required!',
-            'phone.requied'  => 'phone number Required!'
+            'reg_no.required' => 'Register Number is required!',
+            'phone.required'  => 'phone number Required!',
+            'gender.required' => 'Gender Required!'
         ];
     }
 }
