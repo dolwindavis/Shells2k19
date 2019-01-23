@@ -26,6 +26,7 @@ return array(
     'App\\Http\\Middleware\\TrustProxies' => $baseDir . '/app/Http/Middleware/TrustProxies.php',
     'App\\Http\\Middleware\\VerifyCsrfToken' => $baseDir . '/app/Http/Middleware/VerifyCsrfToken.php',
     'App\\Http\\Requests\\CollegeRegisterRequest' => $baseDir . '/app/Http/Requests/CollegeRegisterRequest.php',
+    'App\\Http\\Requests\\StudentRegisterRequest' => $baseDir . '/app/Http/Requests/StudentRegisterRequest.php',
     'App\\Models\\College' => $baseDir . '/app/Models/College.php',
     'App\\Models\\Student' => $baseDir . '/app/Models/Student.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',

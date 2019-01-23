@@ -34,16 +34,16 @@ Route::get('/events/list', 'ViewController@eventlistView');
 Route::get('/events/details','ViewController@eventdetailsView');
 
 //Controller => RegisterController
-//Registering a colleger
+//Registering a college 
 
 Route::post('/register','RegisterController@registerCollege'); 
 
+//registering a student
 Route::post('/student/register','RegisterController@registerStudent');
-
 
 //Authentication controllers
 //Controller => LoginController
 //login =>for login
 //logout => for logout
-Auth::routes(['register' => false]);
+//Auth::routes(['register' => false]);
 

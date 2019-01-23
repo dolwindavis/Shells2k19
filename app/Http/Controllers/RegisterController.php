@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\College;
+use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\CollegeRegisterRequest;
+use App\Http\Requests\StudentRegisterRequest;
 
 class RegisterController extends Controller
 {
@@ -52,8 +55,32 @@ class RegisterController extends Controller
     }
 
 
-    public function registerStudent(Request $request)
+    //Registration of the students
+    public function registerStudent(StudentRegisterRequest $request)
     {
+
+        // validation rules => StudentRegisterRequest 
+        $validated = $request->validated();
+
         
+        //retriving authenticated user
+        $user = Auth::user();
+
+        //registering a new student
+        $newstudent = new Student;
+
+        try{
+
+            $newstudent->registerStudent($request,$user);
+
+        }
+        catch(Exception $e){
+
+            return response('false');
+
+        }
+
+        return response('true');
+
     }
 }

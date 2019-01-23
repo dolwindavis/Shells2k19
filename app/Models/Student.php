@@ -19,5 +19,24 @@ class Student extends Model
        return $this->belongsTo('App\Models\User','id');
    }
 
+    //register a student;
+    public function registerStudent($request,$user)
+    {
 
+            $this->name =$request->name;
+
+            $this->email =$request->email;
+
+            $this->phone =$request->phone;
+
+            $this->reg_no =$request->reg_no;
+
+            $this->course =$request->course;
+            
+            $this->gender =$request->gender;
+        
+            $user->student()->save($this);
+
+        
+    }
 }

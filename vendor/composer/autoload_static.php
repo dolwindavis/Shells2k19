@@ -440,6 +440,7 @@ class ComposerStaticInit6aa3ec3b7c713865ec56b89e296e195e
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Requests\\CollegeRegisterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CollegeRegisterRequest.php',
+        'App\\Http\\Requests\\StudentRegisterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StudentRegisterRequest.php',
         'App\\Models\\College' => __DIR__ . '/../..' . '/app/Models/College.php',
         'App\\Models\\Student' => __DIR__ . '/../..' . '/app/Models/Student.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
