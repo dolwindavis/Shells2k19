@@ -12680,10 +12680,12 @@ footer {
   -moz-box-shadow: 1px 1px 55px 0px rgba(0, 0, 0, 0.38);
   box-shadow: 1px 1px 55px 0px rgba(0, 0, 0, 0.38); }
 
-body, h1, h2, h3, h4, h5, h6, ul {
-  margin: 0;
-  padding: 0;
+body {
   background-color: white; }
+
+h1, h2, h3, h4, h5, h6, ul {
+  margin: 0;
+  padding: 0; }
 
 /*slant left*/
 .sl-left:before {
@@ -12774,6 +12776,24 @@ body, h1, h2, h3, h4, h5, h6, ul {
   width: 35%;
   box-sizing: border-box; }
 
+@media (max-width: 500px) {
+  #card-register-in {
+    background-color: white;
+    position: relative;
+    top: -100px;
+    right: 0;
+    width: 40%;
+    box-sizing: border-box; } }
+
+@media (max-width: 800px) {
+  #card-register-in {
+    background-color: white;
+    position: relative;
+    top: -100px;
+    right: 0;
+    width: 90%;
+    box-sizing: border-box; } }
+
 .inst {
   display: inline-block;
   width: 135px;
@@ -12842,3 +12862,90 @@ body, h1, h2, h3, h4, h5, h6, ul {
   background: -ms-radial-gradient(center, ellipse cover, #499bea 0%, #499bea 31%, #207ce5 91%, #207ce5 100%);
   background: radial-gradient(ellipse at center, #499bea 0%, #499bea 31%, #207ce5 91%, #207ce5 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 ); }
+
+/*background in student list*/
+.bg-st-li {
+  background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%); }
+
+/*remove button default style*/
+.btn-rm-d {
+  width: 100%;
+  margin: 0px;
+  border-radius: 0; }
+
+.selectdiv {
+  position: relative;
+  /*Don't really need this just for demo styling*/
+  min-width: 200px;
+  margin: 10px auto; }
+
+.selectdiv:after {
+  content: '\f078';
+  font: normal normal normal 17px/1 FontAwesome;
+  color: #0ebeff;
+  right: -7px;
+  height: 50px;
+  padding: 15px 5px;
+  position: absolute;
+  border: 1px solid #0ebeff;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  pointer-events: none;
+  border-left: none; }
+
+/* IE11 hide native button (thanks Matt!) */
+select::-ms-expand {
+  display: none; }
+
+.selectdiv select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* Add some styling */
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin: 0px 0px;
+  padding: 0px 20px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #333;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #0ebeff;
+  -ms-word-break: normal;
+  word-break: normal;
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px; }
+
+/*event details design*/
+.bg-in-evt-det {
+  height: 400px;
+  width: 100%;
+  background-image: url(https://s3.ap-south-1.amazonaws.com/shells2k19/website/images/event+details/bg9.jpg);
+  background-position: center;
+  background-repeat: none;
+  object-fit: cover;
+  background-size: 100%;
+  object-fit: cover;
+  object-position: bottom; }
+
+#evt-icons img {
+  width: 200px;
+  height: 200px;
+  margin: auto; }
+
+#evt-icons {
+  position: relative;
+  top: 180px;
+  width: 30%;
+  height: 320px; }
+
+@media (max-width: 500px) {
+  #evt-icons {
+    position: relative;
+    top: 180px;
+    width: 90%;
+    height: 320px; } }
