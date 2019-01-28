@@ -48,6 +48,11 @@ Route::post('/register','RegisterController@registerCollege');
 //registering a student
 Route::post('/student/register','RegisterController@registerStudent');
 
+
+Route::post('/events/list', function () {
+    return response()->json(['success'=>'Data is successfully added']);
+});
+
 //Authentication controllers
 //Controller => LoginController
 //login =>for login

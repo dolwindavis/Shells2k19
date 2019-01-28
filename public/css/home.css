@@ -12877,15 +12877,15 @@ h1, h2, h3, h4, h5, h6, ul {
   position: relative;
   /*Don't really need this just for demo styling*/
   min-width: 200px;
-  margin: 10px auto; }
+  margin: 10px auto; 
+}
 
 .selectdiv:after {
   content: '\f078';
   font: normal normal normal 17px/1 FontAwesome;
   color: #0ebeff;
-  right: -7px;
-  height: 50px;
-  padding: 15px 5px;
+  height: 35px;
+  padding: 8px 5px;
   position: absolute;
   border: 1px solid #0ebeff;
   border-radius: 5px;
@@ -12905,7 +12905,7 @@ select::-ms-expand {
   /* Add some styling */
   display: block;
   width: 100%;
-  height: 50px;
+  height: 35px;
   margin: 0px 0px;
   padding: 0px 20px;
   font-size: 16px;
