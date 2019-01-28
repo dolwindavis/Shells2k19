@@ -30,8 +30,8 @@ class CollegeRegisterRequest extends FormRequest
             'phone' => 'required|digits:10|',
             'password' => 'required|string|gte:8',
             //'confirm' => 'required|same:password',
-            'stay' => 'required',
-            'faculty' => 'required'
+            //'stay' => 'required'
+            //'faculty' => 'required'
 
         ];
     }

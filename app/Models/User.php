@@ -51,7 +51,7 @@ class User extends Authenticatable
         
         $this->password = Hash::make($request->password);
         
-        $this->username = 'Shells2k1';
+        $this->username = str_random(8);
 
         $this->save();
 

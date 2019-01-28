@@ -52,5 +52,5 @@ Route::post('/student/register','RegisterController@registerStudent');
 //Controller => LoginController
 //login =>for login
 //logout => for logout
-//Auth::routes(['register' => false]);
+Auth::routes(['register' => false]);
 

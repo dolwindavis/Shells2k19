@@ -18,9 +18,8 @@ class RegisterController extends Controller
     //Registration of the college
 
     public function registerCollege(CollegeRegisterRequest $request)
-    {
-
-
+    {   
+        
         // validation rules => CollegeRegisterRequest  
 
         $validated = $request->validated();
@@ -46,11 +45,11 @@ class RegisterController extends Controller
 
             //rollback the transactions if any error occur
             DB::rollBack();
-            return response('errors');
+            return redirect()->route('register');;
 
         }
 
-        return response('true');
+        return redirect()->route('home');;
         
     }
 
@@ -76,11 +75,11 @@ class RegisterController extends Controller
         }
         catch(Exception $e){
 
-            return response('false');
+            return redirect()->route('register');
 
         }
 
-        return response('true');
+        return redirect()->route('home');
 
     }
 }

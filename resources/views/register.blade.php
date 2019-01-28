@@ -13,42 +13,48 @@
       <h3 style="letter-spacing: 1px;" ><strong>REGISTER</strong></h3>
     </div>
     </div>
+
+  <!-- College Registration Form Starts -->
+
+  <form method="POST" action= "{{ url('/register') }}">
+  @csrf
   <div class="row p-4">
     <div class="col-md-12 col-xs-12">
-    <input type="text" class="form-control wt-h ht-f" placeholder="College Name" name="">
+    <input type="text" class="form-control wt-h ht-f" placeholder="College Name" name="name">
     </div>
   </div>
   <div class="row p-4">
     <div class="col-md-12 col-xs-12"> 
-    <input type="Email" class="form-control wt-h ht-f" placeholder="Email" name="">
+    <input type="Email" class="form-control wt-h ht-f" placeholder="Email" name="email">
     </div>
   </div>
   <div class="row p-4">
     <div class="col-md-12 col-xs-12"> 
-    <input type="Email" class="form-control wt-h ht-f" placeholder="Phone Number" name="">
+    <input type="text" class="form-control wt-h ht-f" placeholder="Phone Number" name="phone">
     </div>
   </div>
   <div class="row p-4">
     <div class="col-md-12 col-xs-12"> 
-    <input type="Password" class="form-control wt-h ht-f" placeholder="Password" name="">
+    <input type="Password" class="form-control wt-h ht-f" placeholder="Password" name="password">
     </div>
   </div>
     <div class="form-check">
         <label class="form-check-label">
-            <input class="form-check-input" type="checkbox" value="">
+            <input class="form-check-input" type="checkbox" value="1" name="stay">
             stay?
             <span class="form-check-sign">
                 <span class="check"></span>
             </span>
         </label>
-    </div>
-  
-  
+    </div> 
   <div class="row p-4">
     <div class="col-md-12 col-xs-12"> 
-    <button type="button" class="btn gra-blue wt-h" style="letter-spacing: 2px;">Register</button>
+    <button type="submit" class="btn gra-blue wt-h" style="letter-spacing: 2px;">Register</button>
     <br>
-   
+   </form>
+   <!-- form ends -->
+
+
   </div>
   </div>
   </div>
