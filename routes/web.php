@@ -16,9 +16,9 @@
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/student/list', function () {
-    return view('studentlist');
-});
+// Route::get('/student/list', function () {
+//     return view('studentlist');
+// });
 Route::get('/student/add', function () {
     return view('studentadd');
 });

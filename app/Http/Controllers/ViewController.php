@@ -33,6 +33,6 @@ class ViewController extends Controller
 
     function eventdetailsView() {
 
-        return view('eventdetails');
+        return view('events');
     }
 }
