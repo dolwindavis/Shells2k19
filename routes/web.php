@@ -53,6 +53,11 @@ Route::get('/logout',function(){
 
 });
 
+
+Route::post('/events/list', function () {
+    return response()->json(['success'=>'Data is successfully added']);
+});
+
 //Authentication controllers
 //Controller => LoginController
 //login =>for login
