@@ -57,7 +57,7 @@ class RegisterController extends Controller
     //Registration of the students
     public function registerStudent(StudentRegisterRequest $request)
     {
-
+        
         // validation rules => StudentRegisterRequest 
         $validated = $request->validated();
 
@@ -65,6 +65,7 @@ class RegisterController extends Controller
         //retriving authenticated user
         $user = Auth::user();
 
+        
         //registering a new student
         $newstudent = new Student;
 
@@ -75,11 +76,11 @@ class RegisterController extends Controller
         }
         catch(Exception $e){
 
-            return redirect()->route('register');
+            return redirect('/student/register');
 
         }
 
-        return redirect()->route('home');
+        return redirect('/students/list');
 
     }
 }

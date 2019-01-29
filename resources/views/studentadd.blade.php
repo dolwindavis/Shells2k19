@@ -17,12 +17,17 @@
     <h3 style="letter-spacing: 1px;"><strong>ADD PARTICIPANT</strong></h3>
   </div>
   </div>
+
+  <!-- student Registration form -->
+  <form method="POST" action="{{ url('/student/register') }}">
+  @csrf
   <!--Name details -->
 <div class="row p-4">
   <div class="col-md-12 col-xs-12">
-  <input type="text" class="form-control wt-h ht-f" placeholder="Participant Name" name="">
+  <input type="text" class="form-control wt-h ht-f" placeholder="Participant Name" name="name">
   </div>
 </div>
+
 <!-- Gender details-->
 <div class="row p-4">
   <div class="col text-left">
@@ -31,7 +36,7 @@
   <div class="col">
     <div class="form-check form-check-radio form-check-inline">
     <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Male
+    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male"> Male
     <span class="circle">
         <span class="check"></span>
     </span>
@@ -39,7 +44,7 @@
    </div>
     <div class="form-check form-check-radio form-check-inline">
   <label class="form-check-label">
-    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Female
+    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="female"> Female
     <span class="circle">
         <span class="check"></span>
     </span>
@@ -51,28 +56,39 @@
 <!--Phone Number Details-->
 <div class="row p-4">
   <div class="col-md-12 col-xs-12"> 
-  <input type="Email" class="form-control wt-h ht-f" placeholder="Phone Number" name="">
+  <input type="text" class="form-control wt-h ht-f" placeholder="Phone Number" name="phone">
   </div>
 </div>
+
 <!-- course details -->
 <div class="row p-4">
   <div class="col-md-12 col-xs-12"> 
-  <input type="Password" class="form-control wt-h ht-f" placeholder="course" name="">
+  <input type="text" class="form-control wt-h ht-f" placeholder="course" name="course">
   </div>
 </div>
+
+<!-- Register Number details -->
+<div class="row p-4">
+  <div class="col-md-12 col-xs-12"> 
+  <input type="text" class="form-control wt-h ht-f" placeholder="reg_no" name="reg_no">
+  </div>
+</div>
+
 <!-- Email id-->
 <div class="row p-4">
   <div class="col-md-12 col-xs-12"> 
-  <input type="Password" class="form-control wt-h ht-f" placeholder="Email" name="">
+  <input type="email" class="form-control wt-h ht-f" placeholder="Email" name="email">
   </div>
 </div>
 
-
 <div class="row pt-4">
   <div class="col-md-12 col-xs-12" style="padding-left: 0;padding-right: 0;"> 
-  <button type="button" class="btn btn-success wt-h btn-rm-d p-3" style="letter-spacing: 1px;font-size: 1em;">Add</button>
+  <button type="submit" class="btn btn-success wt-h btn-rm-d p-3" style="letter-spacing: 1px;font-size: 1em;">Add</button>
   <br>
- 
+</form> 
+
+<!-- end of form -->
+
 </div>
 </div>
 

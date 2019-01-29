@@ -22,6 +22,10 @@ class ViewController extends Controller
         return view('studentlist');
     }
 
+    function studentAddView() {
+        return view('studentadd');
+    }
+
     function studentupdateView() {
         return view('studentupdate');
     }
@@ -30,9 +34,10 @@ class ViewController extends Controller
         return view('eventlist');
     }
 
-
     function eventdetailsView() {
 
         return view('events');
     }
+
+
 }

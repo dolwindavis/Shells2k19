@@ -13,25 +13,33 @@
     <div class="collapse navbar-collapse float-right" id="navbarNav">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Events</a>
+          <a class="nav-link" href="{{ url('/events') }}">Events</a>
         </li>
+
+<!-- Authenticated user Drop Down Menu -->
+
+        @if(Auth::User())
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Dropdown 
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="{{ url('student') }}">Registration</a>
             <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="{{ url('logout') }}" >Logout</a>
           </div>
         </li>
+        @else
         <li class="nav-item">
-          <a class="nav-link disabled" href="#"><i class="fas fa-sign-in-alt" style="font-size: 20px;"></i></a>
+          <a class="nav-link disabled" href="{{ url('login') }}"><i class="fas fa-sign-in-alt" style="font-size: 20px;"></i></a>
         </li>
-        
+        @endif
+
+<!-- end of  the authenticated DropDown -->
+
       </ul>
     </div>
   </nav>
