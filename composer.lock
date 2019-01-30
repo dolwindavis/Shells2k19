@@ -722,6 +722,8 @@
         },
         {
             "name": "laravel/framework",
+
+
             "version": "v5.7.23",
             "source": {
                 "type": "git",
@@ -864,6 +866,7 @@
                 "framework",
                 "laravel"
             ],
+
             "time": "2019-01-29T14:33:25+00:00"
         },
         {
