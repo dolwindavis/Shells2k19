@@ -48,27 +48,33 @@
        </div>
        <!--Add or Edit Button -->
         <div class="row">
+        <a href="{{ url('student/edit/'.$student->id)}}">
          <div class="col" style="padding-left: 0;padding-right: 0;">
             <button type="button" class="btn btn-success" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);"><i class="fa fa-pencil-square-o" aria-hidden="true" style="
            font-size: 12px"></i> Edit</button>
          </div>
+        </a>
+        <a href="{{ url('student/delete/'.$student->id)}}">
          <div class="col" style="padding-right:  0;padding-left: 0;">
            <button type="button" class="btn btn-danger" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);"><i class="fa fa-trash" aria-hidden="true" style="
            font-size: 12px" style=""></i> Delete</button>
          </div>
+        </a>
        </div>
     </div>
   @endforeach
 <!-- Student Card End -->
    
     <!-- student list add-->
+    
     <div class="col-md m-2 p-2 card-1 border-r-sm bg-st-li">
       <div class="text-center p-5">
         <i class="fas fa-plus-circle" style="font-size: 50px;"></i><br>
         <h2>Add</h2>
       </div>
     </div>
-    
+
+
   </div>
   </div>
 </div>
