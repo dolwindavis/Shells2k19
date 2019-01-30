@@ -16,13 +16,6 @@
 Route::get('/', function () {
     return view('home');
 });
-// Route::get('/student/list', function () {
-//     return view('studentlist');
-// });
-Route::get('/student/add', function () {
-    return view('studentadd');
-});
-
 
 //Controller => ViewController
 //Rendering Views
@@ -34,35 +27,35 @@ Route::get('/register','ViewController@registerView');
 
 Route::get('/student/update','ViewController@studentupdateView');
 
-Route::get('/events/list', 'ViewController@eventlistView');
+Route::get('/events/register', 'ViewController@eventlistView');
 
 Route::get('/events','ViewController@eventdetailsView');
 
 //Controller => RegisterController
 //Registering a college 
 
-// Route::post('/register','RegisterController@registerCollege'); 
+Route::post('/register','RegisterController@registerCollege'); 
 
-
-
-Route::get('/logout',function(){
-
-    Auth::logout();
-
-    return redirect('/home');
+Route::get('/event/add',function ()
+{
+    return view('eventadd');
 
 });
 
+Route::post('/event/add','RegisterController@eventRegister');
 
-Route::post('/events/list', function () {
-    return response()->json(['success'=>'Data is successfully added']);
-});
+// Route::post('/events/list', function () {
+//     return response()->json(['success'=>'Data is successfully added']);
+// });
+
+
 
 //Authentication controllers
 //Controller => LoginController
 //login =>for login
 //logout => for logout
 Auth::routes(['logout' => false]);
+
 
 
 //authenticating controllers
@@ -77,8 +70,23 @@ Route::middleware(['auth'])->group(function () {
     //registering a student
     Route::post('/student/register','RegisterController@registerStudent');
 
+    //editing student view
+    Route::get('/student/edit/{studentid}','ViewController@editStudentView');
+
+    //editing student details
+    Route::post('/student/edit/{studentid}','RegisterController@studentUpdate');
+
+    //deleting student
+    Route::get('/student/delete/{studentid}','RegisterController@studentDelete');
+   
+});
 
 
-    
+Route::get('/logout',function(){
+
+    Auth::logout();
+
+    return redirect('/home');
+
 });
 

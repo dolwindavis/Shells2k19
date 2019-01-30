@@ -71,7 +71,7 @@
     <div class="row border-r-sm">
       
     <div class="col-md-6 " style="padding-left:  0;">
-      <img src="static/img/hom/slide1.jpg " class="border-r-sm" style="width: 100%;height: 100%; object-fit: cover; object-position: right;" >
+      <img src="https://s3.ap-south-1.amazonaws.com/shells2k19/website/images/slider-1.jpg" class="border-r-sm" style="width: 100%;height: 100%; object-fit: cover; object-position: right;" >
     </div>
     <div class="col-md-6 p-5  sl-left-2  text-dark mv-top box">
       <h2 class="text-left border-bottom border-primary"><b style="font-weight: 400;">About</b>  Department</h2>

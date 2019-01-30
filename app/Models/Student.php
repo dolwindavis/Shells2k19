@@ -39,4 +39,25 @@ class Student extends Model
 
         
     }
+
+    public function updateStudent($request)
+    {
+
+            $this->name =$request->name;
+
+            $this->email =$request->email;
+
+            $this->phone =$request->phone;
+
+            $this->reg_no =$request->reg_no;
+
+            $this->course =$request->course;
+            
+            $this->gender =$request->gender;
+        
+            $this->save();
+
+        
+    }
+
 }

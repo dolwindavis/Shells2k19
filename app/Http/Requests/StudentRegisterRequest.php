@@ -26,7 +26,7 @@ class StudentRegisterRequest extends FormRequest
         
         return [
             'name' => 'required',
-            'email' => 'required|email|unique:students,email',
+            'email' => 'required|email',
             'phone' => 'required|digits:10|',
             'reg_no' => 'required',
             'course' => 'required',
