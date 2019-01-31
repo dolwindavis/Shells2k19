@@ -189,9 +189,11 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
                     <div class="selectdiv" style="padding:10px;">
                             <label>
                                 <select id="eventselect">
-                                    <option selected value=""> Select Box </option>
-                                    <option value="event1">event 1</option>
-                                    <option value="event2">event 2</option>
+                                    <option selected value="">Select Event </option>
+                                    @foreach($events as $event)
+                                        <option value="{{ $event->id }}">{{ $event->name }}</option>
+                                    @endforeach
+                                    <!--<option value="Option 2">Option 2</option>-->
                                 </select>
                             </label>
                           </div>

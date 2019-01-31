@@ -44,6 +44,7 @@ Route::get('/event/add',function ()
 
 Route::post('/event/add','RegisterController@eventRegister');
 
+Route::get('/event/details','EventController@eventDetails');
 // Route::post('/events/list', function () {
 //     return response()->json(['success'=>'Data is successfully added']);
 // });
@@ -54,7 +55,7 @@ Route::post('/event/add','RegisterController@eventRegister');
 //Controller => LoginController
 //login =>for login
 //logout => for logout
-Auth::routes(['logout' => false]);
+Auth::routes(['logout' => false,'register' =>false]);
 
 
 
@@ -78,6 +79,8 @@ Route::middleware(['auth'])->group(function () {
 
     //deleting student
     Route::get('/student/delete/{studentid}','RegisterController@studentDelete');
+
+    //Registering event
    
 });
 
