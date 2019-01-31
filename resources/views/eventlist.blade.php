@@ -184,7 +184,7 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
         <section class="container">
             <div class="card" >
               <div class="front">
-                <div class="text-center p-0 pl-5" onclick="flip()">
+                <div class="text-center p-0 pl-5~" onclick="flip()">
                 <i class="fas fa-plus-circle" style="font-size: 50px;"></i><br>
                 <h2>Add</h2>
               </div>
