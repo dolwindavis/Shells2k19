@@ -78,7 +78,11 @@
                     @endauth
                 </div>
             @endif
-
+            <form method="post" action="{{ url('aws') }}" enctype="multipart/form-data">
+            @csrf
+            <input type="file">
+            <img src="{{$image }}" >
+            </form>
             <div class="content">
                 <div class="title m-b-md">
                     Laravel

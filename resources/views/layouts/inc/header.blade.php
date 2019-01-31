@@ -28,7 +28,7 @@
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="{{ url('student') }}">Registration</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="{{ url('events/register') }}">Event Registration</a>
             <a class="dropdown-item" href="{{ url('logout') }}" >Logout</a>
           </div>
         </li>

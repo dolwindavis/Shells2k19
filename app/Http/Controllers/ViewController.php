@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Events;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class ViewController extends Controller
@@ -19,24 +21,42 @@ class ViewController extends Controller
     }
 
     function studentlistView() {
+        
+        
         return view('studentlist');
     }
 
     function studentAddView() {
-        return view('studentadd');
-    }
 
-    function studentupdateView() {
-        return view('studentupdate');
+        $student =new Student();
+
+        $student->name=null;
+        $student->phone=null;
+        $student->gender=null;
+        $student->email=null;
+        $student->course=null;
+        $student->reg_no=null;
+
+        return view('studentadd',compact('student'));
     }
 
     function eventlistView() {
+
         return view('eventlist');
     }
 
     function eventdetailsView() {
 
-        return view('events');
+        $events=Events::all();
+
+        return view('events',compact('events'));
+    }
+
+
+    public function editStudentView($studentid)
+    {
+        $student=Student::find($studentid);
+        return view('studentadd',compact('student'));
     }
 
 
