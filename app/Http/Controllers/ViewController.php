@@ -42,7 +42,11 @@ class ViewController extends Controller
 
     function eventlistView() {
 
-        return view('eventlist');
+        $events=Events::select('name','id')->get();
+
+       
+
+        return view('eventlist',compact('events'));
     }
 
     function eventdetailsView() {
@@ -56,6 +60,7 @@ class ViewController extends Controller
     public function editStudentView($studentid)
     {
         $student=Student::find($studentid);
+
         return view('studentadd',compact('student'));
     }
 
