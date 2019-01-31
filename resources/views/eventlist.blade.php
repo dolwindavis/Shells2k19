@@ -183,7 +183,12 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
         <!--add new card-->
         <section class="container">
             <div class="card" >
-              <div class="front"><button onclick="flip()">ADD NEW CARD</button></div>
+              <div class="front">
+                <div class="text-center p-0 pl-5" onclick="flip()">
+                <i class="fas fa-plus-circle" style="font-size: 50px;"></i><br>
+                <h2>Add</h2>
+              </div>
+            </div>
               <div class="back" style="width:100%;position:absolute;left:0px;">
                   <h3>SELECT AN EVENT YOU LIKE TO PARTICIPATE</h3>
                     <div class="selectdiv" style="padding:10px;">
