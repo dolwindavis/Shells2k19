@@ -42,6 +42,11 @@ class User extends Authenticatable
          return $this->hasMany('App\Models\Student','college_id');
     }
 
+    public function eventstudent()
+    {
+         return $this->hasMany('App\Models\EventStudent','college_id');
+    }
+
     //insert a user
     public function registerUser($request){
 
@@ -51,7 +56,7 @@ class User extends Authenticatable
         
         $this->password = Hash::make($request->password);
         
-        $this->username = str_random(8);
+        $this->username = "s19".str_random(3);
 
         $this->save();
 

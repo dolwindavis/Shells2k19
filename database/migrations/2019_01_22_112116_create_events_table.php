@@ -27,6 +27,7 @@ class CreateEventsTable extends Migration
             $table->integer('groupnumber');
             $table->integer('maxnumber');
             $table->integer('exclusive');
+            $table->string('slug');
             $table->timestamps();
         });
     }

@@ -25,12 +25,6 @@ Route::get('/login', 'ViewController@loginView');
 
 Route::get('/register','ViewController@registerView');
 
-Route::get('/student/update','ViewController@studentupdateView');
-
-Route::get('/events/register', 'ViewController@eventlistView');
-
-Route::get('/events','ViewController@eventdetailsView');
-
 //Controller => RegisterController
 //Registering a college 
 
@@ -44,10 +38,16 @@ Route::get('/event/add',function ()
 
 Route::post('/event/add','RegisterController@eventRegister');
 
-Route::get('/event/details','EventController@eventDetails');
-// Route::post('/events/list', function () {
-//     return response()->json(['success'=>'Data is successfully added']);
-// });
+
+//need to be Authenticated
+Route::get('/events/register', 'ViewController@eventlistView');
+
+//ajax requests
+Route::get('/event/details','EventController@eventDetails');//[request =>id   response=>name,logo,info,id]
+
+Route::get('/event/students/list','EventController@eventParticipant');//[request=>id response=>name,id]
+
+Route::get('/student/event/register','EventController@eventParticipant');//[request=>id,studentid[],eventid response=>true]
 
 
 
@@ -93,3 +93,4 @@ Route::get('/logout',function(){
 
 });
 
+Route::get('event/{slug}','ViewController@eventdetailsView');

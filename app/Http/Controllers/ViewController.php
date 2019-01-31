@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Events;
+use App\Helpers\Helper;
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ViewController extends Controller
 {
@@ -42,16 +44,21 @@ class ViewController extends Controller
 
     function eventlistView() {
 
-        $events=Events::select('name','id')->get();
 
-       
+        // $events=Events::select('name','id')->get();
 
+        $helper = new Helper;
+
+        $events=$helper->eventListSort();
+
+    
         return view('eventlist',compact('events'));
     }
 
-    function eventdetailsView() {
+    function eventdetailsView(Request $request,$slug) {
 
-        $events=Events::all();
+       
+        $events=Events::where('slug',$slug)->get();
 
         return view('events',compact('events'));
     }

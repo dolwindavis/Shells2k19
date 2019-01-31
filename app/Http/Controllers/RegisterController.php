@@ -6,10 +6,12 @@ use App\Models\User;
 use App\Models\Events;
 use App\Models\College;
 use App\Models\Student;
+use App\Mail\RegisterMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\EventRegisterRequest;
 use App\Http\Requests\CollegeRegisterRequest;
@@ -51,7 +53,11 @@ class RegisterController extends Controller
 
         }
 
-        return redirect()->route('home');;
+        //sending mail to the user
+        $this->sendMail($newuser);
+
+
+        return redirect('home');
         
     }
 
@@ -158,7 +164,7 @@ class RegisterController extends Controller
         $headnamePath = '/events/eventheads/' . $headFileName;
 
         //uploading the file into the amazone bucket
-        $s3->put($headnamePath, file_get_contents($logo), 'public');
+        $s3->put($headnamePath, file_get_contents($head), 'public');
 
         //creating url for logo
         $request->logo=$url.$logoPath;
@@ -166,11 +172,22 @@ class RegisterController extends Controller
         //creating url for headimage
         $request->headimage=$url.$headnamePath;
 
+        $request->slug=str_slug($request->name, '-');
+
         $event=new Events();
 
         $event->registerEvent($request);
 
         return redirect('/event/add');
 
+    }
+
+
+    function sendMail($newuser)
+    {
+        $mail=$newuser->email;
+        $username=$newuser->username;
+        Mail::to($mail)->send(new RegisterMail($username));
+        
     }
 }
