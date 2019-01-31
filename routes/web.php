@@ -45,6 +45,7 @@ Route::get('/event/add',function ()
 Route::post('/event/add','RegisterController@eventRegister');
 
 Route::get('/event/details','EventController@eventDetails');
+
 // Route::post('/events/list', function () {
 //     return response()->json(['success'=>'Data is successfully added']);
 // });

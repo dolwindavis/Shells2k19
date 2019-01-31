@@ -1,8 +1,9 @@
 /node_modules
-/public/hot
+/pubgit lic/hot
 /public/storage
 /storage/*.key
 /vendor
+/vendor/composer
 .env
 .phpunit.result.cache
 Homestead.json
