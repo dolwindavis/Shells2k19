@@ -19,6 +19,11 @@ class Student extends Model
        return $this->belongsTo('App\Models\User','id');
    }
 
+   public function eventstudent()
+   {
+        return $this->hasMany('App\Models\EventStudent','student_id');
+   }
+
     //register a student;
     public function registerStudent($request,$user)
     {

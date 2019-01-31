@@ -9,6 +9,10 @@ class Events extends Model
 
     protected $table= 'events';
 
+    public function eventstudent()
+    {
+         return $this->hasMany('App\Models\EventStudent','event_id');
+    }
 
     function registerEvent($request)
     {
@@ -25,7 +29,7 @@ class Events extends Model
         $this->groupnumber=$request->groupnumber;
         $this->maxnumber=$request->maxnumber;
         $this->exclusive=$request->exclusive;
-
+        $this->slug=$request->slug;
         $this->save();
     }
 }
