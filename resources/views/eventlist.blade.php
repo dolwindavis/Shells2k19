@@ -195,7 +195,7 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
                },
                success: function(result){
 
-                    console.log(result.name);
+                    console.log(result);
                   }});
             });
 
