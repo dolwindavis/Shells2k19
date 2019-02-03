@@ -169,8 +169,8 @@ button.btn
                         eventid:results.id,
                         studentid:sid,
                },
-               success: function(result){
-                    alert("saved");
+               success: function(response){
+                    alert(response);
                   }});
         });
         });
