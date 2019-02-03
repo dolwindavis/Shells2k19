@@ -439,6 +439,7 @@ class ComposerStaticInit6aa3ec3b7c713865ec56b89e296e195e
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Helpers\\Helper' => __DIR__ . '/../..' . '/app/Helpers/Helper.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -463,6 +464,7 @@ class ComposerStaticInit6aa3ec3b7c713865ec56b89e296e195e
         'App\\Http\\Requests\\StudentRegisterRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StudentRegisterRequest.php',
         'App\\Mail\\RegisterMail' => __DIR__ . '/../..' . '/app/Mail/RegisterMail.php',
         'App\\Models\\College' => __DIR__ . '/../..' . '/app/Models/College.php',
+        'App\\Models\\EventStudent' => __DIR__ . '/../..' . '/app/Models/EventStudent.php',
         'App\\Models\\Events' => __DIR__ . '/../..' . '/app/Models/Events.php',
         'App\\Models\\Student' => __DIR__ . '/../..' . '/app/Models/Student.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',

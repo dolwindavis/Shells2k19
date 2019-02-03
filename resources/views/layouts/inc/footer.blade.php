@@ -1,18 +1,25 @@
 
-<div class="container-fluid " style="background-color: #212121">
-    <div class="row p-5">
-        <div class="col-md-3 text-left border-light  " style="font-size: 12px;">
+<div class="container-fluid " style="background-color: #212121;min-height:350px !important;">
+    <div class="row pt-5">
+        <div class="col-md-3 text-left border-light  " style="font-size: 12px;min-height:350px !important">
           <a href="#" class="d-block p-2 text-light" style="font-size: 12px;"> Home</a>
           <a href="#" class="d-block p-2 text-light" style="font-size: 12px;">Events</a>
           <a href="#" class="d-block p-2 text-light" style="font-size: 12px;"> Contact Us</a>
           <a href="#" class="d-block p-2 text-light" style="font-size: 12px;"> Register</a>
           <a href="" class="d-block p-2 text-light" style="font-size: 12px;">Login</a>
         </div>
-        <div class="col-md-4">
-          
-        </div>
-        <div class="col-md-5 text-center">
-              <div style="position: absolute;bottom: 0;right: 0;">
+        <div class="col-md-5" style="min-height:350px !important">
+          <div class="mapouter">
+            <div class="gmap_canvas">
+            <iframe width="500" height="200" id="gmap_canvas" src="https://maps.google.com/maps?q=kristujayanti&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+            </iframe><a href="https://www.crocothemes.net"></a>
+            </div>
+            <style>.mapouter{height:350px;width:100%;}.gmap_canvas {overflow:hidden;background:none !important;height:350px;width:500px;}
+            </style>
+          </div>
+            </div>
+        <div class="col-md-3 text-center " style="min-height:350px !important">
+              <div >
                
               <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FShellsITfest%2F&width=30px&layout=button_count&action=like&size=small&show_faces=true&share=true&height=46&appId" width="130px" height="20"  scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media">
               </iframe>

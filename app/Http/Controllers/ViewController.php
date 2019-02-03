@@ -44,7 +44,6 @@ class ViewController extends Controller
 
     function eventlistView() {
 
-
         // $events=Events::select('name','id')->get();
 
         $helper = new Helper;

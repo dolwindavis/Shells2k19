@@ -38,6 +38,12 @@ Route::get('/event/add',function ()
 
 Route::post('/event/add','RegisterController@eventRegister');
 
+Route::get('/event/details','EventController@eventDetails');
+
+// Route::post('/events/list', function () {
+//     return response()->json(['success'=>'Data is successfully added']);
+// });
+
 
 //need to be Authenticated
 Route::get('/events/register', 'ViewController@eventlistView');
@@ -48,6 +54,7 @@ Route::get('/event/details','EventController@eventDetails');//[request =>id   re
 Route::get('/event/students/list','EventController@eventParticipant');//[request=>id response=>name,id]
 
 Route::get('/student/event/register','EventController@eventParticipant');//[request=>id,studentid[],eventid response=>true]
+
 
 
 

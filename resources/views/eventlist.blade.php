@@ -56,6 +56,13 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
     -o-transform: rotateY( 180deg );
     transform: rotateY( 180deg );
 }
+button.btn
+{
+    position:absolute;
+    bottom:0;
+    margin:0;
+    left:0;
+}
 </style>
 @endsection
 
@@ -67,125 +74,23 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
 
 
     <div class="container" style="box-sizing: border-box;">
-      <div class="row text-center text-light" style="box-sizing: border-box;">
+      <div class="row text-center text-light" id="addcol" style="box-sizing: border-box;">
             {{-- card design start --}}
-        <div class="col-md-4 m-2 card-1 border-r-sm" style="max-width:350px">
-           <!--event icon and name details-->
-           <div class="row" style="background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);">
-             <div class="bg-dark text-light pt-5" style="position: relative;top: 40px;width: 50%;margin: 10px auto;border-radius: 5px;">
-                <img src="static/img/hom/person.png" height="100px" width="100px">
-               <h5 class="pt-2" ><strong >Deep Web</strong></h5>
-               <p>Web Designing</p>
-             </div>
-           </div>
-           <!--event participant's details -->
-           <form id="form1">
-              @csrf
-           <div class="row" style="margin-top: 50px;">            
-                <div class="selectdiv">
-                
-                <label>
-                    <select id="select1">
-                        <option selected value="">Select Box </option>
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-                        
-                    </select>
-                </label>
-               
-              </div>
-             </div>
-             <div class="row ">
-               <div class="selectdiv">
-                <label>
-                    <select id="select2">
-                        <option selected value=""> Select Box </option>
-                        <option value="Option 1">Option 1</option>
-                        <option value="Option 2">Option 2</option>
-                    </select>
-                </label>
-              </div>
-              
-             </div>
-            </form>
-             <!--Add or Edit Button -->
-              <div class="row">
-               <div class="col" style="padding-left: 0;padding-right: 0;">
-                  <button type="button" class="btn btn-success" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);"><i class="fa fa-pencil-square-o" aria-hidden="true" style="
-                 font-size: 12px"></i> Edit</button>
-               </div>
-               <div class="col" style="padding-right:  0;padding-left: 0;">
-                 <button type="button" class="btn btn-danger" id="savebtn" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);"><i class="fa fa-save" aria-hidden="true" style="
-                 font-size: 12px"></i> Save</button>
-               </div>
-             </div>
-        </div>
  {{-- card design end --}}
-
-     {{-- card design start --}}
-
-          <div class="col-md-4 m-2 card-1 border-r-sm" style="max-width:350px" >
-             <!--event icon and name details-->
-             <div class="row" style="background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);">
-               <div class="bg-dark text-light pt-5" style="position: relative;top: 40px;width: 50%;margin: 10px auto;border-radius: 5px;">
-                  <img src="static/img/hom/person.png" height="100px" width="100px">
-                 <h5 class="pt-2" ><strong >Deep Web</strong></h5>
-                 <p>Web Designing</p>
-               </div>
-             </div>
-             <!--event participant's details -->
-             <form id="student1">
-                @csrf
-             <div class="row" style="margin-top: 50px;">            
-                  <div class="selectdiv">
-                  
-                  <label>
-                      <select>
-                          <option selected value="">Select Box </option>
-                          <option value="Option 1">Option 1</option>
-                          <option value="Option 2">Option 2</option>
-                          
-                      </select>
-                  </label>
-                 
-                </div>
-               </div>
-               <div class="row ">
-                 <div class="selectdiv">
-                  <label>
-                      <select id="student2>
-                          <option selected value=""> Select Box </option>
-                          <option value="Option 1">Option 1</option>
-                          <option value="Option 2">Option 2</option>
-                      </select>
-                  </label>
-                </div>
-                
-               </div>
-              </form>
-               <!--Add or Edit Button -->
-                <div class="row">
-                 <div class="col" style="padding-left: 0;padding-right: 0;">
-                    <button type="button" class="btn btn-success" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);"><i class="fa fa-pencil-square-o" aria-hidden="true" style="
-                   font-size: 12px"></i> Edit</button>
-                 </div>
-                 <div class="col" style="padding-right:  0;padding-left: 0;">
-                   <button type="button" class="btn btn-danger" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);"><i class="fa fa-save" aria-hidden="true" style="
-                   font-size: 12px" style=""></i> Save</button>
-                 </div>
-               </div>
-          </div>
-   {{-- card design end --}}
-
     {{-- card design start --}}
 
-    <div class="col-md-4 m-2 card-1 border-r-sm" style="max-width:350px">
+    <div class="col-md-4 m-2 card-1 border-r-sm" style="max-width:350px;height:450px">
         <!--add new card-->
         <section class="container">
             <div class="card" >
-              <div class="front"><button onclick="flip()">ADD NEW CARD</button></div>
+              <div class="front">
+                <div class="text-center p-0 pl-5" onclick="flip()">
+                <i class="fas fa-plus-circle" style="font-size: 50px;"></i><br>
+                <h2>Add</h2>
+              </div>
+            </div>
               <div class="back" style="width:100%;position:absolute;left:0px;">
-                  <h3>SELECT AN EVENT YOU LIKE TO PARTICIPATE</h3>
+                  <h4>SELECT AN EVENT YOU LIKE TO PARTICIPATE</h4>
                     <div class="selectdiv" style="padding:10px;">
                             <label>
                                 <select id="eventselect">
@@ -204,7 +109,9 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
         
      </div>
 {{-- card design end --}}
-   
+  {{-- card design start --}}
+  {{-- <div class="col-md-4 m-2 card-1 border-r-sm" style="max-width:350px"><div class="row" style="background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);"><div class="bg-dark text-light pt-5" style="position: relative;top: 40px;width: 50%;margin: 10px auto;border-radius: 5px;"><img src="static/img/hom/person.png" height="100px" id="logo"  width="100px"><h5 class="pt-2" ><strong id="eventname"></strong></h5><p id="event_info"></p></div></div><form id="form1">@csrf<div class="row" style="margin-top: 50px;" id="student_no"></div></form><div class="row"><div class="col" style="padding-left: 0;padding-right: 0;"><button type="button" class="btn btn-success" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 12px"></i> Edit</button></div><div class="col" style="padding-right:  0;padding-left: 0;"><button type="button" class="btn btn-danger" id="savebtn" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);"><i class="fa fa-save" aria-hidden="true" style="font-size: 12px"></i> Save</button></div></div></div> --}}
+  {{-- card design end --}}  
        
       
     </div>
@@ -224,9 +131,46 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
 
 
   <script>
+    var select_tag="";
+    var student_list="";
+    //   create card code
+      function create_card(results,studentslist)
+      {
+        select_tag="";
+        student_list="";
+                       for(var j=0;j<studentslist.length;j++)
+                          {
+                            student_list+='<option value="'+studentslist[j].id+'">'+studentslist[j].name+'</option>';
+                        }
+                        for(var i=0;i<results.students;i++)
+                        {
+                           
+                            select_tag+='<div class="selectdiv"><label><select id="selectbox">'+student_list+'</select></label></div>';
+                               
+                        }
+        $(document).ready(function(){
+        $('#addcol').append('<div class="col-md-3 m-2 card-1 border-r-sm" style="min-width:300px;min-height:450px;"><div class="row" style="background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);"><div class="bg-dark text-light pt-5" style="position: relative;top: 40px;width: 50%;margin: 10px auto;border-radius: 5px;"><img src="'+results.logo+'" height="100px" id="logo"  width="100px"><h5 class="pt-2" ><strong id="eventname">'+results.name+'</strong></h5><p >'+results.info+'</p></div></div><form id="form1">@csrf<div class="row" style="margin-top: 50px;" id="student_no"> '+select_tag+' </div></form><div class="row" ><div class="col" style="padding-left: 0;padding-right: 0;"><button type="button" class="btn btn-success" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #4481eb 0%, #04befe 100%);" ><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 12px" ></i> Edit</button></div><div class="col" style="padding-right:  0;padding-left: 0;"><button type="button" class="btn btn-danger" id="savebtn" style="width: 100%;margin: 0px;border-radius: 0;background-image: linear-gradient(to top, #9be15d 0%, #00e3ae 100%);" ><i class="fa fa-save" aria-hidden="true" style="font-size: 12px" ></i> Save</button></div></div></div>');
+        });
+        console.log(results,studentslist);
+        
+      }
+
+        // selection in card code
+    //   function selectno(result,students)
+    //   { 
+    //     $(document).ready(function(){
+    //                     $('div#student_no').append(' <div class="selectdiv"><label><select id="selectbox"><option selected value="">Select Box </option>'+students(students)+'</select></label></div>');
+    //     });
+    //   }
+
+   
+
+
      $(document).ready(function(){
+       
           // ajax request for addbtn
         $('#btnadd').click(function(e){
+            
             e.preventDefault();
             $.ajaxSetup({
                headers: {
@@ -234,18 +178,42 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
                }
            });
             $.ajax({
-               url: "{{ url('/events/details') }}",
-               method: 'post',
+               url: "{{ url('/event/details') }}",
+               method: 'get',
                data: {
-                student1:$('#eventselect').val(),
+                id:$('#eventselect').val(),
                },
                success: function(result){
-                    alert(result.success);
+                       var results=result;
+                        $.ajaxSetup({
+                             headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                                    }
+                                    });
+                                    $.ajax({
+                                    url: "{{ url('/event/students/list') }}",
+                                    method: 'get',
+                                    data: {
+                                            id:$('#eventid').val(),
+                                    },
+                                    success: function(studentslist){
+                                                create_card(results,studentslist);
+                                               
+                                                // students(students);
+                                        }}); 
                   }});
             });
 
+            // student in a particular event details
+      
+
+            
             // ajax request for savebtn
-         $('#savebtn').click(function(e){
+            function save()
+            {
+
+           
+            $('#savebtn').click(function(e){
             e.preventDefault();
             $.ajaxSetup({
                headers: {
@@ -256,13 +224,14 @@ background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);;
                url: "{{ url('/events/list') }}",
                method: 'post',
                data: {
-                student1:$('#student1').val(),
-                student2: $('#student2').val(),
+               
                },
                success: function(result){
-                    alert(result.success);
+                    alert("saved");
                   }});
             });
+            }
+            
          });
     </script>
 
