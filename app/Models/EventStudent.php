@@ -23,4 +23,14 @@ class EventStudent extends Model
         return $this->belongsTo('App\Models\Events','id');
     }
 
+    public function registerEventStudent($request)
+    {
+        $this->student_id=$request->studentid;
+        $this->event_id=$request->eventid;
+        $this->group_id=$request->groupid;
+        $this->college_id=Auth::user()->id;
+
+        $this->save();
+    }
+
 }

@@ -18,7 +18,7 @@ class CreateTableEventStudent extends Migration
             $table->integer('college_id');
             $table->integer('student_id');
             $table->integer('event_id');
-            $table->integer('group_id');
+            $table->string('group_id');
             $table->timestamps();
         });
     }
