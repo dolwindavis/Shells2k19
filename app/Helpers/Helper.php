@@ -42,7 +42,7 @@ class Helper
 
             }
         }
-        return $sevents;
+        return $events;
 
     }
 
