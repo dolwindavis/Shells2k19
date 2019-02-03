@@ -19,6 +19,7 @@ class EventController extends Controller
         
         $payload=collect();
 
+        $payload->put('id',$event->id);
         $payload->put('name',$event->name);
         $payload->put('logo',$event->logo);
         $payload->put('info',$event->info);
