@@ -8,6 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Helpers\\Helper' => $baseDir . '/app/Helpers/Helper.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -32,6 +33,7 @@ return array(
     'App\\Http\\Requests\\StudentRegisterRequest' => $baseDir . '/app/Http/Requests/StudentRegisterRequest.php',
     'App\\Mail\\RegisterMail' => $baseDir . '/app/Mail/RegisterMail.php',
     'App\\Models\\College' => $baseDir . '/app/Models/College.php',
+    'App\\Models\\EventStudent' => $baseDir . '/app/Models/EventStudent.php',
     'App\\Models\\Events' => $baseDir . '/app/Models/Events.php',
     'App\\Models\\Student' => $baseDir . '/app/Models/Student.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
