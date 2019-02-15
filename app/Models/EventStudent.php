@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class EventStudent extends Model
@@ -25,7 +26,7 @@ class EventStudent extends Model
 
     public function registerEventStudent($request)
     {
-        $this->student_id=$request->studentid;
+        $this->student_id=$request->studentsid;
         $this->event_id=$request->eventid;
         $this->group_id=$request->groupid;
         $this->college_id=Auth::user()->id;

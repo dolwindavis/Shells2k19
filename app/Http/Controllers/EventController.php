@@ -41,13 +41,13 @@ class EventController extends Controller
     {
         $eventid = $request->input('id');
         
-        //$helper = new Helper;
+        $helper = new Helper;
 
-        //$student = $helper->studentSort();
+        $student = $helper->studentSort($request);
 
-        $user=Auth::user();
+        // $user=Auth::user();
 
-        $student=$user->student()->select('name','id')->get();
+        // $student=$user->student()->select('name','id')->get();
 
         return response()->json($student);
 
@@ -62,42 +62,41 @@ class EventController extends Controller
         $eventid=$request->eventid;
 
         $user=Auth::user();
-        
+
         //evennt details
         $event=Events::find($request->eventid);
 
         //checking a student eligible for ragistering
-        for($i=0;$i<=count($studentid);$i++){
+        for($i=0;$i<= count($studentid)-1;$i++){
 
-            $eventstudent=EventStudent::where(['studentid',$studentid[$i]],['eventid',$eventid]);
-
+            $eventstudent=EventStudent::where([['student_id',$studentid[$i] ],['event_id',$eventid]])->get();
             //checking for exclusive event validation
-            if($event->exclusive == '1' && $eventstudent){
+            if($event->exclusive == '1' && $eventstudent->isNotEmpty()){
 
-                return response('false');
+                return response('exclusive event validation');
 
             }
 
         }
 
-        $eventstudent=EventStudent::where(['collegeid',$user->id],['eventid',$eventid])->get();
-
+        $eventstudent=EventStudent::where([['college_id',$user->id],['event_id',$eventid]])->get();
+ 
         //checking college already registered or not
-        if($event->groupevent == '1' && $eventstudent){
+        if($event->groupevent == '1' && $eventstudent->isNotEmpty()){
 
-            return response('false');
+            return response('college already registered');
 
         }
         //checking individual event registraion validation
-        elseif($event->maxnumber >= $eventstudent->count() && $event->groupevent == '0'){
+        elseif($event->maxnumber <= $eventstudent->count() && $event->groupevent == '0'){
 
-            return response('false');
+            return response('individual registration max');
 
         }
         //checking whether request has same number of students or not for an event
         elseif($event->groupevent == '1' && (count($studentid) != $event->groupnumber)){
 
-            return response('false');
+            return response('groupevent number validation');
 
         }
 
@@ -112,16 +111,14 @@ class EventController extends Controller
 
         }
         
-
-        for($i=0;$i<=count($studentid);$i++){
+        for($i=0;$i<=count($studentid)-1;$i++){
 
             $newevent=new EventStudent;
-
-            $newregs = $newevent->registerEventStudent($request);
-
+            $request->studentsid=$studentid[$i];
+            $newevent->registerEventStudent($request);
         }
 
-        return redirect('/events/list');
+        return response('true');
 
     }
 }

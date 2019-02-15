@@ -53,7 +53,7 @@ Route::get('/event/details','EventController@eventDetails');//[request =>id   re
 
 Route::get('/event/students/list','EventController@eventParticipant');//[request=>id response=>name,id]
 
-Route::get('/student/event/register','EventController@eventParticipant');//[request=>id,studentid[],eventid response=>true]
+Route::get('/student/event/register','EventController@eventRegister');//[request=>id,studentid[],eventid response=>true]
 
 
 
