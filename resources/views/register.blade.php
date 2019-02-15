@@ -1,16 +1,7 @@
 @extends('layouts.main')
 @section('title','SHELLS2k19 | REGISTRATION')
 
-@section('sweetalert')
-  
-<script src="{{asset('js/regesteration.js')}}"></script>
-<script src="{{asset('js/sweetall.js')}}"></script>
-<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-<script src="{{asset('js/sweetalert2.min.js')}}"></script>
-<link rel="stylesheet" href="{{asset('css/sweetalert2.min.css')}}">
 
-@endsection
 
 @section('content')
 <div class="container-fluid" style="padding: 0px;">
@@ -27,7 +18,7 @@
 
   <!-- College Registration Form Starts -->
 
-  <form method="POST" action= "{{ url('/register') }}" onsubmit="return validateform()">
+  <form method="POST" action= "{{ url('/register') }}" onsubmit="return validateform()" name="myform">
   @csrf
   <div class="row p-4">
     <div class="col-md-12 col-xs-12">
@@ -41,7 +32,7 @@
   </div>
   <div class="row p-4">
     <div class="col-md-12 col-xs-12"> 
-    <input type="text" class="form-control wt-h ht-f" placeholder="Phone Number" name="phone">
+    <input type="text" class="form-control wt-h ht-f" placeholder="Phone Number" name="phoneno">
     </div>
   </div>
   <div class="row p-4">
@@ -60,7 +51,7 @@
     </div> 
   <div class="row p-4">
     <div class="col-md-12 col-xs-12"> 
-    <button type="submit" class="btn gra-blue wt-h" style="letter-spacing: 2px;" onclick="validateform()">Register</button>
+    <button type="submit" class="btn gra-blue wt-h" style="letter-spacing: 2px;">Register</button>
     <br>
    </form>
    <!-- form ends -->
@@ -69,5 +60,15 @@
   </div>
   </div>
   </div>
+@endsection
+
+@section('sweetalert')
+<script src="{{asset('js/regesteration.js')}}"></script>
+<script src="{{asset('js/sweetall.js')}}"></script>
+<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+<script src="{{asset('js/sweetalert2.min.js')}}"></script>
+
+
 @endsection
 

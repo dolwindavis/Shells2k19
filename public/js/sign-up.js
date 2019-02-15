@@ -3,7 +3,6 @@ var name=document.myform.name.value;
 var password=document.myform.password.value;  
 var flag=true;
   
-  
  if (name==null || name==""){  
   Swal.fire({
   type: 'warning',
@@ -31,17 +30,5 @@ else if(password.length<6){
  flag=false;
  }
 
- 
 return flag;
-
-if ((name=="admin" )&&( password=="adminlog")){  
-  Swal.fire({
-  type :'Good job',
-  title:'Your successfuly login',
-  text: 'success'
-  })
- flag=false; 
-}
-
-
 }  
